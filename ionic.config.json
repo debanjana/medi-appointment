@@ -1,0 +1,8 @@
+{
+  "name": "setMD",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "8d6c7880"
+}
