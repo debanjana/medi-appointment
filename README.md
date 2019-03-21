@@ -8,6 +8,12 @@ Google Authentication using Firebase.
 I have a api logic in server.js using  node.js's express framework. 
 
 Clone the application. 
-Run to run the Rest API  `node server.js` 
-Run to load the app `ionic serve` 
+
+
+Run to run the Rest API 
+`node server.js` 
+
+
+Run to load the app
+`ionic serve` 
 
