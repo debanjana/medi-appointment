@@ -3,6 +3,10 @@
   "integrations": {
     "cordova": {}
   },
+  "proxies": [{
+    "path": "/paitent",
+    "proxyUrl": "http://localhost:3000/paitent"
+  }],
   "type": "angular",
   "id": "8d6c7880"
 }

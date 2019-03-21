@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -14,6 +15,7 @@ import {AngularFireModule} from 'angularfire2';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { FormsModule } from '@angular/forms';
 
 export const firebaseConfig={
   apiKey: "AIzaSyBNjwehBJbQnHdhjKnjDrtwrIdoyaOhwhs",
@@ -32,6 +34,8 @@ firebase.initializeApp(firebaseConfig);
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
