@@ -1,5 +1,5 @@
 # setMD-poc
-This is a POC for SetMD an app that will help Dr Schedule appointments and Integrate with Klara service
+This is a POC for SetMD an app that will help doctor Schedule appointments and Integrate with Klara service
 
 
 This is an Angular 7 application with Ionic Framework. 
