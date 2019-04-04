@@ -1,4 +1,4 @@
-# setMD-poc
+# medi-appointment
 This is a POC for SetMD an app that will help doctor Schedule appointments and Integrate with Klara service
 
 
