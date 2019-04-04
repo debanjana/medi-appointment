@@ -1,7 +1,7 @@
 # medi-appointment
 
 
-This is a proof of concept for a medical appointmenet scheduling  app that will help doctors schedule appointments for various kinds of services offered by them . The app also integrates with a third party service for getting in touch with paitents in a HIPPA compliant manner.
+This is a proof of concept for a medical appointment scheduling  app that will help doctors schedule appointments for various kinds of services offered by them . The app also integrates with a third party service for getting in touch with patients in a HIPPA compliant manner.
 
 # Technology
 
@@ -14,17 +14,17 @@ This is a proof of concept for a medical appointmenet scheduling  app that will 
 
 
 
-# Working 
+# How it works
 
-This is an Angular 7 application with Ionic Framework. Google Authentication is done  using Firebase. I have used Firebase database to store doctore and paitent and production company details.
+This is an Angular 7 application with Ionic Framework. Google Authentication is done  using Firebase. I have used Firebase database to store doctor and patients and production company details.
 I have a api logic in setMDserver.js using  node.js's express framework. 
-Google Calendar API helps retrive and doctor's calendar and create new appointment as well.
+Google Calendar API helps retrieve doctor's calendar and create new appointment as well.
 
 # Run 
 
 * Create your API key and Web Client by following the steps mentioned in https://developers.google.com/calendar/
 
-* Replace the existing Key and Web Client in index.js file with your Credentails
+* Replace the existing Key and Web Client in index.js file with your Credentials
 
 * Clone the application.
 ```
