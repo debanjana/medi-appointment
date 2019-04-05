@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DoctorHomePage } from './doctor-home.page';
+import { ConfigService } from '../service/config.service';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DoctorHomePage]
+  declarations: [DoctorHomePage],
+  providers : [ConfigService]
 })
 export class DoctorHomePageModule {}

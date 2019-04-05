@@ -1,8 +1,10 @@
 var express = require('express');
 var firebase = require('firebase');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var app = express();
+app.use(cors())
 app.use(bodyParser.json()); //need to parse HTTP request body
 
 var config = {
@@ -16,23 +18,23 @@ var config = {
 var fireApp = firebase.initializeApp(config);
   
 //Fetch instances -- one time use authentication codes
-app.get('/onetimeauthenticationcode', function (req, res) {
+// app.get('/onetimeauthenticationcode', function (req, res) {
 
-	console.log("HTTP Get Request");
-	var userReference = firebase.database().ref("/AuthenticationKeys/");
+// 	console.log("HTTP Get Request");
+// 	var userReference = firebase.database().ref("/AuthenticationKeys/");
 
-	//Attach an asynchronous callback to read the data
-	userReference.on("value", 
-			  function(snapshot) {
-					console.log(snapshot.val());
-					res.json(snapshot.val());
-					userReference.off("value");
-					}, 
-			  function (errorObject) {
-					console.log("The read failed: " + errorObject.code);
-					res.send("The read failed: " + errorObject.code);
-			 });
-});
+// 	//Attach an asynchronous callback to read the data
+// 	userReference.on("value", 
+// 			  function(snapshot) {
+// 					console.log(snapshot.val());
+// 					res.json(snapshot.val());
+// 					userReference.off("value");
+// 					}, 
+// 			  function (errorObject) {
+// 					console.log("The read failed: " + errorObject.code);
+// 					res.send("The read failed: " + errorObject.code);
+// 			 });
+// });
 
 //Fetch instances -- Set Medic authentication codes
 app.get('/setmedicauthenticationcodes', function (req, res) {
@@ -98,25 +100,25 @@ app.post('/patients/emergencycontact/', function (req, res) {
 
 
 //Fetch Patient Profile pic ______________________________________________
-app.get('/patients/:uid/profilepic/', function (req, res) {
+// app.get('/patients/:uid/profilepic/', function (req, res) {
 
-	var UID = req.body.UID;
+// 	var UID = req.body.UID;
 
-	console.log("HTTP Get Request");
-	var userReference = firebase.database().ref("/Users/Patients/" + UID + '/ProfilePic/');
+// 	console.log("HTTP Get Request");
+// 	var userReference = firebase.database().ref("/Users/Patients/" + UID + '/ProfilePic/');
 
-	//Attach an asynchronous callback to read the data
-	userReference.on("value", 
-			  function(snapshot) {
-					console.log(snapshot.val());
-					res.json(snapshot.val());
-					userReference.off("value");
-					}, 
-			  function (errorObject) {
-					console.log("The read failed: " + errorObject.code);
-					res.send("The read failed: " + errorObject.code);
-			 });
-});
+// 	//Attach an asynchronous callback to read the data
+// 	userReference.on("value", 
+// 			  function(snapshot) {
+// 					console.log(snapshot.val());
+// 					res.json(snapshot.val());
+// 					userReference.off("value");
+// 					}, 
+// 			  function (errorObject) {
+// 					console.log("The read failed: " + errorObject.code);
+// 					res.send("The read failed: " + errorObject.code);
+// 			 });
+// });
 
 
 //Fetch Set Medic Profile pic ______________________________________________
@@ -141,46 +143,46 @@ app.get('/setmedics/:uid/profilepic', function (req, res) {
 });
 
 //Fetch Doctor Profile pic ______________________________________________
-app.get('/doctors/:uid/profilepic/', function (req, res) {
+// app.get('/doctors/:uid/profilepic/', function (req, res) {
 
-	var UID = req.body.UID;
+// 	var UID = req.body.UID;
 
-	console.log("HTTP Get Request");
-	var userReference = firebase.database().ref("/Users/Doctors/" + UID + '/ProfilePic/');
+// 	console.log("HTTP Get Request");
+// 	var userReference = firebase.database().ref("/Users/Doctors/" + UID + '/ProfilePic/');
 
-	//Attach an asynchronous callback to read the data
-	userReference.on("value", 
-			  function(snapshot) {
-					console.log(snapshot.val());
-					res.json(snapshot.val());
-					userReference.off("value");
-					}, 
-			  function (errorObject) {
-					console.log("The read failed: " + errorObject.code);
-					res.send("The read failed: " + errorObject.code);
-			 });
-});
+// 	//Attach an asynchronous callback to read the data
+// 	userReference.on("value", 
+// 			  function(snapshot) {
+// 					console.log(snapshot.val());
+// 					res.json(snapshot.val());
+// 					userReference.off("value");
+// 					}, 
+// 			  function (errorObject) {
+// 					console.log("The read failed: " + errorObject.code);
+// 					res.send("The read failed: " + errorObject.code);
+// 			 });
+// });
 
-//Fetch Prroduction Management Profile pic ______________________________________________
-app.get('/productionmanagement/:uid/profilepic/', function (req, res) {
+// //Fetch Prroduction Management Profile pic ______________________________________________
+// app.get('/productionmanagement/:uid/profilepic/', function (req, res) {
 
-	var UID = req.body.UID;
+// 	var UID = req.body.UID;
 
-	console.log("HTTP Get Request");
-	var userReference = firebase.database().ref("/Users/ProductionManagement/"+ UID + '/ProfilePic/');
+// 	console.log("HTTP Get Request");
+// 	var userReference = firebase.database().ref("/Users/ProductionManagement/"+ UID + '/ProfilePic/');
 
-	//Attach an asynchronous callback to read the data
-	userReference.on("value", 
-			  function(snapshot) {
-					console.log(snapshot.val());
-					res.json(snapshot.val());
-					userReference.off("value");
-					}, 
-			  function (errorObject) {
-					console.log("The read failed: " + errorObject.code);
-					res.send("The read failed: " + errorObject.code);
-			 });
-});
+// 	//Attach an asynchronous callback to read the data
+// 	userReference.on("value", 
+// 			  function(snapshot) {
+// 					console.log(snapshot.val());
+// 					res.json(snapshot.val());
+// 					userReference.off("value");
+// 					}, 
+// 			  function (errorObject) {
+// 					console.log("The read failed: " + errorObject.code);
+// 					res.send("The read failed: " + errorObject.code);
+// 			 });
+// });
 
 
 //Fetch
@@ -460,3 +462,4 @@ var server = app.listen(8080, function () {
    
    console.log("Example app listening at http://%s:%s", host, port);
 });
+

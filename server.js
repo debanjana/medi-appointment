@@ -8,21 +8,26 @@ app.use(cors())
 
 const paitentList = [
     {
+        uid: "uid",
+        name : "p1",
+        age : 'a2', 
+        symptom: 's2'
+    },
+    {
+        uid: "uid",
         name : "p2",
         age : 'a2', 
         symptom: 's2'
     },
     {
-        name : "p2",
-        age : 'a2', 
-        symptom: 's2'
-    },
-    {
-        name : "p2",
+        uid: "uid",
+        name : "p3",
         age : 'a2', 
         symptom: 's2'
     },
 ]
+
+
 
 app.get('/', (req, res) => res.send('Hello World!'))
 

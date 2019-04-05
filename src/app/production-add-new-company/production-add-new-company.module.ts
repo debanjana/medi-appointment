@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
+import { HttpClient } from '@angular/common/http';
+
 import { ProductionAddNewCompanyPage } from './production-add-new-company.page';
 
 const routes: Routes = [
@@ -23,4 +25,10 @@ const routes: Routes = [
   ],
   declarations: [ProductionAddNewCompanyPage]
 })
-export class ProductionAddNewCompanyPageModule {}
+export class ProductionAddNewCompanyPageModule {
+  
+constructor(private http: HttpClient) {
+
+  }
+
+}

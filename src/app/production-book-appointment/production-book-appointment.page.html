@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Book Appoimntment : prod-name
+      Book Appoimntment
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -57,3 +57,66 @@
 
 
 </ion-content>
+
+
+
+
+<div class="bodyContainer">
+  <button id="signout_button" onclick="handleSignoutClick()" class="circular ui icon button sign_out">
+    <i class="icon sign-out"></i>
+    Sign Out
+  </button>
+  <h1 class="ui center aligned icon header">
+    <i class="circular calendar outline icon"></i>
+    <div class="ui huge header">When is it ? </div>
+    <button class="ui teal button" onclick="showCreateEventForm()" >
+        <i class="calendar plus icon outline icon" style="padding-left: 2rem;"></i>
+    </button>
+  </h1>
+
+  <!--Add buttons to initiate auth sequence and sign out-->
+  <button id="authorize_button" onclick="handleAuthClick()" style="display: none;">Authorize</button>
+  <div id="create_event_block" class="ui yellow inverted segment">
+    <div class="ui inverted form" style="padding-left: 2rem ; padding-right: 2rem;">
+      <div style="padding-left: 2rem ; padding-right: 2rem;">
+        <div class="field">
+          <label>Title of Event</label>
+          <input [(ngModel)] = "title" id="create_title" placeholder="Title" type="text">
+        </div>
+        <div class="field">
+          <label>Location</label>
+          <input [(ngModel)] = "location" id="create_location" placeholder="Location" type="text">
+        </div>
+        <div class="field">
+          <label>Summary</label>
+          <input [(ngModel)] = "summary" id="create_summary" placeholder="Summary" type="text">
+        </div>
+        <div class="seven field">
+          <label>Start Date</label>
+          <input [(ngModel)] = "startDate" type="date" id="create_date" name="trip-start" value="2019-04-01" min="2018-01-01" max="2020-12-31">
+        </div>
+
+        <div class="six field">
+          <label>Start Time</label>
+          <input [(ngModel)] = "startTime" id="create_time" type="time" id="appt" name="appt" min="9:00" max="18:00" required>
+        </div>
+        <div class="seven field">
+            <label>End Date</label>
+            <input [(ngModel)] = "endDate" type="date" id="create_end_date" name="trip-start" value="2019-04-01" min="2018-01-01" max="2020-12-31">
+          </div>
+  
+          <div class="six field">
+            <label>End Time</label>
+            <input [(ngModel)] = "endTime" id="create_end_time" type="time" id="appt" name="appt" min="9:00" max="18:00" required>
+          </div>
+        <div id="createEvent" class="ui submit button">Submit</div>
+      </div>
+    </div>
+  </div>
+ <div id="banner"></div>
+
+<div id="content" class="ui cards" style="padding-left: 9rem;"></div>
+</div>
+
+<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+onreadystatechange="if (this.readyState === 'complete') this.onload()">
